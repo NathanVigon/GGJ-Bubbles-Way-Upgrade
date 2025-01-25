@@ -9,12 +9,12 @@ public class BubbleSelector : MonoBehaviour, IPointerClickHandler {
     public TextMeshProUGUI textMeshPro;
 
     public void OnPointerClick(PointerEventData eventData) {
-        if (Menu.Instance.isPaused || GameTestManager.Instance.isPlaying) return;
+        if (Menu.Instance.isPaused || LevelManager.Instance.isPlaying) return;
         
         Cursor.Instance.SetPrefab(prefab);
     }
 
-    void OnValidate() {
+    void Start() {
         textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
         if (textMeshPro != null && prefab != null) {
             textMeshPro.text = prefab.GetComponent<Bubble>().prix + "L";

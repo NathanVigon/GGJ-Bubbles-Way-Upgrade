@@ -63,7 +63,7 @@ public class GridManager : MonoBehaviour {
                 }
                 break;
             case Visibility.EditMode:
-                if (GameTestManager.Instance.isPlaying) {
+                if (LevelManager.Instance.isPlaying) {
                     foreach (LineRenderer line in lines) {
                         line.enabled = false;
                     }

@@ -18,12 +18,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1541347417320574733, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2865514097970433442, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
       propertyPath: bounciness
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3625633732023222255, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 2800000, guid: 8b3c6fca578edfc4b9492655d7ace65f, type: 3}
     - target: {fileID: 4634580476259486403, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -34,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6834037320555758582, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6834037320555758582, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
       propertyPath: m_LocalPosition.x

@@ -21,7 +21,11 @@ public class Menu : MonoBehaviour {
         settingsCanvas.SetActive(false);
         isPaused = false;
     }
-    
+
+    public void GetBubbleAvailable() {
+        
+    }
+
     public void OpenMenu(bool value) {
         gameCanvas.interactable = !value;
         settingsCanvas.SetActive(value);

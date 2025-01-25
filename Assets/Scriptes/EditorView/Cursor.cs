@@ -21,7 +21,7 @@ public class Cursor : MonoBehaviour {
     }
 
     void Update() {
-        if (Menu.Instance.isPaused || GameTestManager.Instance.isPlaying) {
+        if (Menu.Instance.isPaused || LevelManager.Instance.isPlaying) {
             spriteRenderer.color = new Color(0, 0, 0, 0);
             if (previewPrefab) {
                 previewPrefab.SetActive(false);
@@ -55,7 +55,7 @@ public class Cursor : MonoBehaviour {
         // Déplacer l'objet vers la position de la grille
         transform.position = gridPosition;
 
-        CheckIfCanPlaceObject(gridPosition, previewPrefab != null);
+        CheckIfCanPlaceObject(gridPosition, previewPrefab);
 
         // Vérifier si le bouton gauche de la souris est enfoncé
         if (Input.GetMouseButtonDown(0)) {
@@ -81,18 +81,18 @@ public class Cursor : MonoBehaviour {
             // Instancier le prefab à la position de la grille
             GameObject placedPrefab = Instantiate(previewPrefab, position, Quaternion.identity);
             placedPrefab.transform.parent = GridManager.Instance.transform.Find("Bubbles");
-            GameTestManager.Instance.ChangeMoney(-placedPrefab.GetComponent<Bubble>().prix);
+            LevelManager.Instance.ChangeMoney(-placedPrefab.GetComponent<Bubble>().prix);
         } else {
             // Vérifier s'il y a un objet sous le curseur
             Collider[] colliders = Physics.OverlapSphere(position, 0.1f);
 
             foreach (Collider collider in colliders) {
                 // Vérifier si l'objet possède le script Bubble
-                Bubble bubble = collider.gameObject.GetComponent<Bubble>();
+                Bubble bubble = collider.transform.parent.GetComponent<Bubble>();
                 if (bubble) {
                     // Supprimer l'objet
-                    GameTestManager.Instance.ChangeMoney(bubble.prix);
-                    Destroy(collider.gameObject);
+                    LevelManager.Instance.ChangeMoney(bubble.prix);
+                    Destroy(bubble.gameObject);
                 }
             }
         }
@@ -101,24 +101,20 @@ public class Cursor : MonoBehaviour {
     private void CheckIfCanPlaceObject(Vector3 position, bool havePrefab) {
         canPlaceHere = true;
         if (havePrefab) {
-            if (GameTestManager.Instance.money - previewPrefab.GetComponent<Bubble>().prix < 0) {
+            if (LevelManager.Instance.money - previewPrefab.GetComponent<Bubble>().prix < 0) {
                 canPlaceHere = false;
             }
 
             Collider[] colliders = Physics.OverlapSphere(position, 0.1f);
 
             foreach (Collider collider in colliders) {
-                if (collider.gameObject != previewPrefab) {
+                if (!collider.transform.IsChildOf(previewPrefab.transform)) {
                     canPlaceHere = false;
                     break;
                 }
             }
 
-            if (canPlaceHere) {
-                spriteRenderer.color = new Color(0, 0, 0, 0.1f);
-            } else {
-                spriteRenderer.color = new Color(1, 0, 0, 0.2f);
-            }
+            spriteRenderer.color = canPlaceHere ? new Color(0, 0, 0, 0.1f) : new Color(1, 0, 0, 0.5f);
         } else {
             spriteRenderer.color = new Color(0, 0, 0, 0.1f);
         }
