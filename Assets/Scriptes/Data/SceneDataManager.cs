@@ -23,9 +23,10 @@ public class SceneDataManager : MonoBehaviour {
 
     public void Load(int levelIndex) {
         Clean();
-        if (levelIndex < GameData.levelDatas.Count)
+        if (levelIndex < GameData.levelDatas.Count) {
             GameData.levelDatas[levelIndex].LoadLevel(StartPointParent, EndPointParent, ObstacleParent);
-        else
+            //TODO call load grille
+        } else
             Debug.Log(levelIndex + " est hors limite");
     }
 
