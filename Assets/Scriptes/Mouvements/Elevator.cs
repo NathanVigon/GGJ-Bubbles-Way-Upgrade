@@ -56,6 +56,6 @@ public class Elevator : MonoBehaviour
         rb.velocity = new Vector3(velocite, leavingJumpPower);
         GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
         rb.useGravity = true;
-        Object.Destroy(this);
+        Object.Destroy(this.gameObject);
     }
 }
