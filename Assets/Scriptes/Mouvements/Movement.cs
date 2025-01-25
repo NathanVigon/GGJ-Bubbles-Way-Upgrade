@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     {
        if (invertedGravity)
        {
-           rb.AddForce(2*-gravity, ForceMode.Force);
+           rb.AddForce(6*-gravity, ForceMode.Force);
        }
         
     }

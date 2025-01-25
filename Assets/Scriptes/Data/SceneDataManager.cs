@@ -66,7 +66,7 @@ public class SceneDataManager : MonoBehaviour {
 
         GameData.levelDatas.Add(levelData);
 
-        AssetDatabase.CreateAsset(levelData, "Assets/ScriptableObjects/LevelsData/" + levelName + ".asset");
+        AssetDatabase.CreateAsset(levelData, "Assets/ScriptableObjects/LevelData/" + levelName + ".asset");
     }
 
     private EntityData[] SaveTabEntity(Transform parent) {
