@@ -1,49 +1,34 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Elevator : MonoBehaviour {
-    public float vitesseAscension;
     public float hauteur;
-    public float velocite;
+    public float duration;
     public float leavingJumpPower;
-
     public GameObject elevator;
-    public Vector3 initialPos;
-
-    private bool occupied;
-
-    void Start() {
-        initialPos = transform.position;
-        elevator = this.gameObject;
-        GetComponent<BoxCollider>().enabled = true;
-    }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player") {
-            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-            rb.velocity = new Vector3(0, vitesseAscension);
-            rb.useGravity = false;
-            GetComponent<Rigidbody>().velocity = new Vector3(0, vitesseAscension);
-            GetComponent<BoxCollider>().enabled = false;
-            StartCoroutine(stopElevator(rb));
+        Movement movement = other.GetComponent<Movement>();
+        if (movement != null) {
+            StartCoroutine(GetAnElevator(movement));
         }
     }
 
-    IEnumerator stopElevator(Rigidbody rb) {
-        float initailY = transform.position.y;
-        rb.transform.position = new Vector3(rb.transform.position.x, initailY + (float)0.6);
-        Object.Instantiate(elevator, initialPos, Quaternion.identity);
-
-        while (this.transform.position.y < (initailY + hauteur)) {
+    private IEnumerator GetAnElevator(Movement movement) {
+        movement.Elevator(false);
+        GameObject obj = Instantiate(elevator, movement.transform.position, Quaternion.identity);
+        obj.transform.parent = movement.transform;
+        Vector3 target = new Vector3(transform.position.x, transform.position.y + hauteur, transform.position.z);
+        
+        float elapsedTime = 0;
+        while (elapsedTime < duration) {
+            movement.transform.position = Vector3.Lerp(transform.position, target, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        rb.velocity = new Vector3(velocite, leavingJumpPower);
-        GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
-        rb.useGravity = true;
-        Object.Destroy(this.gameObject);
+        Destroy(obj);
+        movement.Elevator(true);
+        movement.GetComponent<Rigidbody>().AddForce(new Vector3(0, leavingJumpPower, 0), ForceMode.Impulse);
+        
     }
 }
