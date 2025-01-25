@@ -52,5 +52,10 @@ public class LevelManager : MonoBehaviour {
         playButton.SetActive(!value);
         stopButton.SetActive(value);
         GridManager.Instance.ChangeVisibility(GridManager.Instance.visibility);
+        Movement[] movements = FindObjectsOfType<Movement>();
+        foreach (Movement movement in movements) {
+            movement.BougeFilsDe();
+        }
+        
     }
 }
