@@ -19,7 +19,7 @@ PrefabInstance:
     - target: {fileID: 3625633732023222255, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 2800000, guid: c023d524bd5341e4ba4c8b8a6e4f398f, type: 3}
+      objectReference: {fileID: 2800000, guid: 1509de9438943c64a9a5efafaab151cd, type: 3}
     - target: {fileID: 4634580476259486403, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
