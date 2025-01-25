@@ -26,7 +26,7 @@ MonoBehaviour:
   BulleDispo:
   - {fileID: 2032810456575358678, guid: 3de9d2dd2f5051b4498fc6c90884d143, type: 3}
   Money: 30
-  TailleX: 14
+  TailleX: 20
   TailleY: 10
   NbrBonhomme: 1
   NbrPointEtoile: 01000000

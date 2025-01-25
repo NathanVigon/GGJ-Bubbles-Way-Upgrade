@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe30607fd91b104e98c4b41ca3ad0fa, type: 3}
-  m_Name: level2
+  m_Name: level3
   m_EditorClassIdentifier: 
   StartPoint:
     prefab: {fileID: 1585953227753360316, guid: 5f603c87e63ce8f41acb4c4aed82bba7, type: 3}
-    position: {x: -3.5, y: 0, z: 0}
+    position: {x: -3.5, y: -1, z: 0}
     scale: {x: 1, y: 1, z: 1}
     rotation: {x: -0, y: -0, z: -0, w: 1}
   EndPoints:
   - prefab: {fileID: 1335475134517411630, guid: f6e59a4538bb3f249b16cc9387c5132b, type: 3}
-    position: {x: 3.5, y: 0, z: 0}
+    position: {x: 3.5, y: 2, z: 0}
     scale: {x: 1, y: 1, z: 1}
     rotation: {x: -0, y: -0, z: -0, w: 1}
   Obstacles:
   - prefab: {fileID: 1989023245605073204, guid: fc52d44c30b7c474683ce72c76baad1d, type: 3}
-    position: {x: 0, y: 1, z: 0}
+    position: {x: 0, y: 2, z: 0}
     scale: {x: 1, y: 1, z: 1}
-    rotation: {x: -0, y: -0, z: -0, w: 1}
+    rotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   BulleDispo:
-  - {fileID: 2816492458616727572, guid: fe7e8d9eefc8bc8419541428cc19c5e6, type: 3}
-  - {fileID: 7592986312848526023, guid: 4f19bc91fbe78204e8596388fd3c0da5, type: 3}
-  Money: 21
+  - {fileID: 2032810456575358678, guid: 3de9d2dd2f5051b4498fc6c90884d143, type: 3}
+  - {fileID: 1143932660826922340, guid: e343a1966be31df41a4b1074f9245a43, type: 3}
+  Money: 30
   TailleX: 20
   TailleY: 10
-  NbrBonhomme: 1
-  NbrPointEtoile: 01000000
+  NbrBonhomme: 2
+  NbrPointEtoile: 02000000
