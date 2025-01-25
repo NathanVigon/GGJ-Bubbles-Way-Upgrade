@@ -85,4 +85,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52635be9f188f944a03a864fe4693b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 2
+  bounciness: 1.5

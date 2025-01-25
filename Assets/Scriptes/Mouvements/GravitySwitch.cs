@@ -18,6 +18,8 @@ public class GravitySwitch : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        print(other.transform.parent.name);
+        movement = other.GetComponent<Movement>();
         if (!movement.invertedGravity)
         {
             movement.invertedGravity = true;
