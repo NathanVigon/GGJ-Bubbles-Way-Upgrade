@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe30607fd91b104e98c4b41ca3ad0fa, type: 3}
-  m_Name: test
+  m_Name: level1
   m_EditorClassIdentifier: 
   StartPoint:
     prefab: {fileID: 1585953227753360316, guid: 5f603c87e63ce8f41acb4c4aed82bba7, type: 3}
-    position: {x: 0, y: 0, z: 0}
+    position: {x: -4.5, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
     rotation: {x: -0, y: -0, z: -0, w: 1}
   EndPoints:
   - prefab: {fileID: 1335475134517411630, guid: f6e59a4538bb3f249b16cc9387c5132b, type: 3}
-    position: {x: 5.32, y: 0, z: 0}
+    position: {x: 4.5, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
     rotation: {x: -0, y: -0, z: -0, w: 1}
   Obstacles: []
-  BulleDispo: []
-  Money: 4000
-  TailleX: 10
+  BulleDispo:
+  - {fileID: 2032810456575358678, guid: 3de9d2dd2f5051b4498fc6c90884d143, type: 3}
+  Money: 30
+  TailleX: 14
   TailleY: 10
-  NbrBonhomme: 5
-  NbrPointEtoile: 
+  NbrBonhomme: 1
+  NbrPointEtoile: 01000000
