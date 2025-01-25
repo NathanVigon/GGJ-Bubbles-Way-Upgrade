@@ -21,7 +21,7 @@ public class Cursor : MonoBehaviour {
     }
 
     void Update() {
-        if (Menu.Instance.isPaused) {
+        if (Menu.Instance.isPaused || GameTestManager.Instance.isPlaying) {
             spriteRenderer.color = new Color(0, 0, 0, 0);
             if (previewPrefab) {
                 previewPrefab.SetActive(false);
@@ -81,7 +81,7 @@ public class Cursor : MonoBehaviour {
             // Instancier le prefab à la position de la grille
             GameObject placedPrefab = Instantiate(previewPrefab, position, Quaternion.identity);
             placedPrefab.transform.parent = GridManager.Instance.transform.Find("Bubbles");
-            GameTestManager.Instance.money -= placedPrefab.GetComponent<Bubble>().prix;
+            GameTestManager.Instance.ChangeMoney(-placedPrefab.GetComponent<Bubble>().prix);
         } else {
             // Vérifier s'il y a un objet sous le curseur
             Collider[] colliders = Physics.OverlapSphere(position, 0.1f);
@@ -91,7 +91,7 @@ public class Cursor : MonoBehaviour {
                 Bubble bubble = collider.gameObject.GetComponent<Bubble>();
                 if (bubble) {
                     // Supprimer l'objet
-                    GameTestManager.Instance.money += bubble.prix;
+                    GameTestManager.Instance.ChangeMoney(bubble.prix);
                     Destroy(collider.gameObject);
                 }
             }

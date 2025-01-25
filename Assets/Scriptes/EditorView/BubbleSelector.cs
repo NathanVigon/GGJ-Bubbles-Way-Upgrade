@@ -9,7 +9,7 @@ public class BubbleSelector : MonoBehaviour, IPointerClickHandler {
     public TextMeshProUGUI textMeshPro;
 
     public void OnPointerClick(PointerEventData eventData) {
-        if (Menu.Instance.isPaused) return;
+        if (Menu.Instance.isPaused || GameTestManager.Instance.isPlaying) return;
         
         Cursor.Instance.SetPrefab(prefab);
     }
