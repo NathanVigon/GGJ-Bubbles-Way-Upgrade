@@ -77,9 +77,6 @@ PrefabInstance:
       addedObject: {fileID: 2760861693821426431}
     - targetCorrespondingSourceObject: {fileID: 6800398303002138120, guid: 9c6be1a9806354249be5431ec1e5927a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3464237881787202222}
-    - targetCorrespondingSourceObject: {fileID: 6800398303002138120, guid: 9c6be1a9806354249be5431ec1e5927a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7780740982001251152}
     - targetCorrespondingSourceObject: {fileID: 6800398303002138120, guid: 9c6be1a9806354249be5431ec1e5927a, type: 3}
       insertIndex: -1
@@ -165,27 +162,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!135 &3464237881787202222
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996574017716648769}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.01
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!145 &7780740982001251152
 SpringJoint:
   m_ObjectHideFlags: 0

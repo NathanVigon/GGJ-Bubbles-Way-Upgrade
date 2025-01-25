@@ -9,7 +9,7 @@ public class BouncyBulle : MonoBehaviour {
         float tempBounciness = bounciness;
         if (other.gameObject.transform.position.x < this.gameObject.transform.position.x) {
             tempBounciness *=
-                1 + (this.gameObject.transform.position.x - other.gameObject.transform.position.x) * 0.15f;
+                1 + (this.gameObject.transform.position.x - other.gameObject.transform.position.x) * 0.8f;
         }
 
         other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(
