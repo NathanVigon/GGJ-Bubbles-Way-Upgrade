@@ -46,16 +46,16 @@ public class LevelManager : MonoBehaviour {
         money += value;
         text.text = money + "L";
     }
-    
+
+    private bool test;
     public void StartGame(bool value){
         isPlaying = value;
         playButton.SetActive(!value);
         stopButton.SetActive(value);
         GridManager.Instance.ChangeVisibility(GridManager.Instance.visibility);
-        Movement[] movements = FindObjectsOfType<Movement>();
-        foreach (Movement movement in movements) {
-            movement.BougeFilsDe();
+        if (!test) {
+            StartCoroutine(SpawnForTest.Instance.SpawnCharacter());
+            test = true;
         }
-        
     }
 }
