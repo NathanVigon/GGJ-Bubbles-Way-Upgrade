@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class GridManager : MonoBehaviour {
     public static GridManager Instance { get; private set; }
 
-    public int gridWidth = 50;
+    public int gridWidth = 100;
     public int gridHeight = 50;
     public Color lineColor = Color.black;
     public List<LineRenderer> lines;
@@ -31,6 +31,8 @@ public class GridManager : MonoBehaviour {
         for (int y = 0; y <= gridHeight; y++) {
             DrawLine(new Vector3(0, y, 0) + transform.position, new Vector3(gridWidth, y, 0) + transform.position);
         }
+
+        CameraController.Instance.SetMinAndMax(gridWidth, gridHeight);
     }
 
     void DrawLine(Vector3 start, Vector3 end) {

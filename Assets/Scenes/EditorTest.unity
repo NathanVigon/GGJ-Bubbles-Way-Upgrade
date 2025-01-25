@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78aa7d083b1546d4997e59704767afd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridWidth: 50
-  gridHeight: 50
+  gridWidth: 25
+  gridHeight: 20
   lineColor: {r: 0, g: 0, b: 0, a: 1}
   lines: []
 --- !u!1 &89781916
@@ -1253,6 +1253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdefe338835530f44877cd3f9bf966bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 0
+  height: 0
+  minCameraPosition: {x: 0, y: 0}
+  maxCameraPosition: {x: 0, y: 0}
   zoomSpeed: 10
 --- !u!1 &880991621
 GameObject:
