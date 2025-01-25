@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ShaderRed
-  m_Shader: {fileID: -6465566751694194690, guid: 92e9876afd3d2524ab9a1834a8d73405, type: 3}
+  m_Name: ShaderBlue
+  m_Shader: {fileID: -6465566751694194690, guid: 04e580ad6c41ede4db42ff8eb6d1e2c3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -31,7 +31,7 @@ Material:
     - _Blend_Opacity: 2.81
     - _Blend_Sharpness: 0.53
     - _Divide_Color: 2.45
-    - _Fresnel_Power: 0.88
+    - _Fresnel_Power: 0.83
     - _Noise_Substraction: 0.31
     - _WaveSpeed: 3
     - _WaveStrenght: 0.03
