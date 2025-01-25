@@ -4,17 +4,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class BubbleSelector : MonoBehaviour, IPointerClickHandler{
+public class BubbleSelector : MonoBehaviour, IPointerClickHandler {
     public GameObject prefab;
     public TextMeshProUGUI textMeshPro;
 
-    public void OnPointerClick(PointerEventData eventData){
+    public void OnPointerClick(PointerEventData eventData) {
+        if (Menu.Instance.isPaused) return;
+        
         Cursor.Instance.SetPrefab(prefab);
     }
 
-    void OnValidate(){
+    void OnValidate() {
         textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
-        if (textMeshPro != null && prefab != null){
+        if (textMeshPro != null && prefab != null) {
             textMeshPro.text = prefab.GetComponent<Bubble>().prix + "L";
         }
     }

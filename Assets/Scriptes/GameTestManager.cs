@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 public class GameTestManager : MonoBehaviour{
-    public static GameTestManager Instance;
+    public static GameTestManager Instance { get; private set; }
 
     public float money;
     public TextMeshProUGUI text;
