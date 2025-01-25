@@ -4,7 +4,11 @@ using UnityEngine;
 using TMPro;
 
 public class GameTestManager : MonoBehaviour{
-    public static GameTestManager Instance;
+    public static GameTestManager Instance { get; private set; }
+
+    public GameObject playButton;
+    public GameObject stopButton;
+    public bool isPlaying;
 
     public float money;
     public TextMeshProUGUI text;
@@ -15,9 +19,21 @@ public class GameTestManager : MonoBehaviour{
         } else {
             Instance = this;
         }
+        
+        playButton.SetActive(true);
+        stopButton.SetActive(false);
+        ChangeMoney(0);
     }
 
-    void Update(){
+    public void ChangeMoney(float value){
+        money += value;
         text.text = money + "L";
+    }
+    
+    public void StartGame(bool value){
+        isPlaying = value;
+        playButton.SetActive(!value);
+        stopButton.SetActive(value);
+        GridManager.Instance.ChangeVisibility(GridManager.Instance.visibility);
     }
 }
