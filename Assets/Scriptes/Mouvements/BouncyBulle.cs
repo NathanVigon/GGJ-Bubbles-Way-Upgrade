@@ -5,7 +5,7 @@ using UnityEngine;
 public class BouncyBulle : MonoBehaviour
 {
 
-    public float bounciness;
+    [SerializeField] private float bounciness;
     // Start is called before the first frame update
     void Start()
     {
