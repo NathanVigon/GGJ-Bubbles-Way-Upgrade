@@ -54,9 +54,9 @@ public class SceneDataManager : MonoBehaviour {
 
         LevelData levelData = ScriptableObject.CreateInstance<LevelData>();
 
-        levelData.StartPoint = SaveStartOrEndPoint(StartPointParent);
-        levelData.EndPoints = SaveTabEntity(EndPointParent);
-        levelData.Obstacles = SaveTabEntity(ObstacleParent);
+        levelData.StartPoint = GetEntityFromData(StartPointParent, 0);
+        levelData.EndPoints = GetTabEntityFromData(EndPointParent);
+        levelData.Obstacles = GetTabEntityFromData(ObstacleParent);
 
         levelData.Money = MoneyToSave;
         levelData.TailleX = TailleXToSave;
@@ -69,25 +69,20 @@ public class SceneDataManager : MonoBehaviour {
         AssetDatabase.CreateAsset(levelData, "Assets/ScriptableObjects/LevelData/" + levelName + ".asset");
     }
 
-    private EntityData[] SaveTabEntity(Transform parent) {
+    private EntityData[] GetTabEntityFromData(Transform parent) {
         var entitys = new EntityData[parent.transform.childCount];
-        for (int i = 0; i < parent.transform.childCount; i++) {
-            entitys[i] = new EntityData() {
-                prefab = parent.transform.GetChild(i).gameObject,
-                position = parent.transform.GetChild(i).position,
-                rotation = parent.transform.GetChild(i).rotation,
-                scale = parent.transform.GetChild(i).localScale
-            };
-        }
+        for (int i = 0; i < parent.transform.childCount; i++)
+            entitys[i] = GetEntityFromData(parent, i);
         return entitys;
     }
 
-    private EntityData SaveStartOrEndPoint(Transform parent) {
+    private EntityData GetEntityFromData(Transform parent, int index) {
+        var prefabSource = PrefabUtility.GetCorrespondingObjectFromSource(parent.transform.GetChild(index).gameObject) ;
         return new EntityData() {
-            prefab = parent.transform.GetChild(0).gameObject,
-            position = parent.transform.GetChild(0).position,
-            rotation = parent.transform.GetChild(0).rotation,
-            scale = parent.transform.GetChild(0).localScale
+            prefab = prefabSource,
+            position = parent.transform.GetChild(index).position,
+            rotation = parent.transform.GetChild(index).rotation,
+            scale = parent.transform.GetChild(index).localScale
         };
     }
 
