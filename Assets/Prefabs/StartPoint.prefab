@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d953b1cb9207364b988e820086462d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 4.4
+  jumpPower: 6
 --- !u!1 &1585953227753360316
 GameObject:
   m_ObjectHideFlags: 0

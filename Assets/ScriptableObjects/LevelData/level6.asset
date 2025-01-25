@@ -55,7 +55,13 @@ MonoBehaviour:
     position: {x: 2, y: 0.15, z: 0}
     scale: {x: 1, y: 1, z: 1}
     rotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  BulleDispo: []
+  BulleDispo:
+  - {fileID: 2816492458616727572, guid: fe7e8d9eefc8bc8419541428cc19c5e6, type: 3}
+  - {fileID: 2032810456575358678, guid: 3de9d2dd2f5051b4498fc6c90884d143, type: 3}
+  - {fileID: 7592986312848526023, guid: 4f19bc91fbe78204e8596388fd3c0da5, type: 3}
+  - {fileID: 5554600846481432276, guid: 4d3d9c0cc09344b488b454a4d20ff815, type: 3}
+  - {fileID: 1143932660826922340, guid: e343a1966be31df41a4b1074f9245a43, type: 3}
+  - {fileID: 4174465412253184720, guid: c0235079d04dc1b448f5ecac06cbaa24, type: 3}
   Money: 130
   TailleX: 20
   TailleY: 10
