@@ -37,10 +37,6 @@ PrefabInstance:
       value: Bouncy1
       objectReference: {fileID: 0}
     - target: {fileID: 6834037320555758582, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6834037320555758582, guid: 4c98f322021aed64c81345ca82c3e967, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
