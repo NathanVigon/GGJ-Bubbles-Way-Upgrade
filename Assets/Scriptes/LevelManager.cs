@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour {
     public static LevelManager Instance { get; private set; }
 
-    public bool isPlaying = false;
-    public bool isWin = false;
+    public bool isPlaying;
+    public bool isWin;
 
     public int money;
     public TextMeshProUGUI MoneyText;
@@ -25,6 +25,9 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] private Transform PlayerParent;
     private List<GameObject> Players = new();
 
+    private int indexLevel;
+    public GameObject canvasTutorials;
+    private Queue<string> tutorialQueue = new Queue<string>();
     private LevelData ActualLevelData {
         get {return SceneDataManager.Instance.ActualLevelData;}
         set {SceneDataManager.Instance.ActualLevelData = value;}
@@ -39,7 +42,8 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Start() {
-        SceneDataManager.Instance.Load(0);
+        indexLevel = 0;
+        SceneDataManager.Instance.Load(indexLevel);
         LoadLevelData();
     }
 
@@ -71,6 +75,52 @@ public class LevelManager : MonoBehaviour {
         CollectPrefab(ActualLevelData.BulleDispo);
         ChangeMoney(0);
         Cursor.Instance.SetPrefab(null);
+        ShowTutorial();
+    }
+    
+    private void ShowTutorial() {
+        tutorialQueue.Clear();
+        switch (indexLevel) {
+            case 0:
+                tutorialQueue.Enqueue("PoseBubbles");
+                tutorialQueue.Enqueue("EraseBubbles");
+                tutorialQueue.Enqueue("BlueBubbles");
+                tutorialQueue.Enqueue("Goal");
+                break;
+            case 1:
+                tutorialQueue.Enqueue("GreenBubbles");
+                tutorialQueue.Enqueue("RedBubbles");
+                tutorialQueue.Enqueue("Spike");
+                break;
+            case 2:
+                tutorialQueue.Enqueue("PurpleBubbles");
+                break;
+            case 3:
+                tutorialQueue.Enqueue("YellowBubbles");
+                break;
+            case 4:
+                tutorialQueue.Enqueue("BlackBubbles");
+                break;
+        }
+        ShowNextTutorial();
+    }
+    
+    private void ShowNextTutorial() {
+        if (tutorialQueue.Count > 0) {
+            string nextTutorial = tutorialQueue.Dequeue();
+            Transform tutorialTransform = canvasTutorials.transform.Find(nextTutorial);
+            if (tutorialTransform != null) {
+                tutorialTransform.gameObject.SetActive(true);
+                tutorialTransform.GetComponent<Button>().onClick.AddListener(OnTutorialClicked);
+            }
+        }
+    }
+
+    private void OnTutorialClicked() {
+        foreach (Transform child in canvasTutorials.transform) {
+            child.gameObject.SetActive(false);
+        }
+        ShowNextTutorial();
     }
 
     #region WIN CANVAS
@@ -79,6 +129,7 @@ public class LevelManager : MonoBehaviour {
         CanvasWin.SetActive(false);
         SwitchStateGame();
         SceneDataManager.Instance.NextLevel();
+        indexLevel++;
         ActualLevelData = SceneDataManager.Instance.ActualLevelData;
         LoadLevelData();
     }
@@ -104,12 +155,16 @@ public class LevelManager : MonoBehaviour {
     #region PLAY/STOP GAME
 
     public void StartGame(){
+        if (isWin) return;
+        
         SwitchStateGame();
         GridManager.Instance.ChangeVisibility(GridManager.Instance.visibility);
         StartCoroutine(SpawnPlayer(1.0f, ActualLevelData.NbrBonhomme));
     }
 
     public void StopGame() {
+        if (isWin) return;
+        
         SwitchStateGame();
         GridManager.Instance.ChangeVisibility(GridManager.Instance.visibility);
         StopAllCoroutines();
