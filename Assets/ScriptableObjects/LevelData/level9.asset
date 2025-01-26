@@ -18,7 +18,7 @@ MonoBehaviour:
     scale: {x: 1, y: 1, z: 1}
     rotation: {x: -0, y: -0, z: -0, w: 1}
   EndPoints:
-  - prefab: {fileID: 1335475134517411630, guid: f6e59a4538bb3f249b16cc9387c5132b, type: 3}
+  - prefab: {fileID: 2626063904302177937, guid: fd4f0e4530751454aabddbfa3bbd3a2a, type: 3}
     position: {x: 9.5, y: 4, z: 0}
     scale: {x: 1, y: 1, z: 1}
     rotation: {x: -0, y: -0, z: -0, w: 1}
@@ -78,4 +78,4 @@ MonoBehaviour:
   TailleX: 20
   TailleY: 10
   NbrBonhomme: 5
-  NbrPointEtoile: 320000006400000096000000
+  NbrPointEtoile: f4010000e8030000dc050000

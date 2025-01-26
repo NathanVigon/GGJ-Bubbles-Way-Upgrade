@@ -34,4 +34,4 @@ MonoBehaviour:
   TailleX: 20
   TailleY: 10
   NbrBonhomme: 1
-  NbrPointEtoile: 01000000
+  NbrPointEtoile: 64000000
