@@ -1342,10 +1342,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1325214419}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: StartGame
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3731,16 +3731,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaying: 0
+  isWin: 0
   money: 0
   MoneyText: {fileID: 159508385}
+  ScoreText: {fileID: 980436538}
+  CanvasWin: {fileID: 80140753}
   PlayButton: {fileID: 360570515}
   StopButton: {fileID: 1938352455}
   menuBarDown: {fileID: 1935224004}
-  bubbleSelectorPrefab: {fileID: 0}
-  BulleDispo: []
-  PlayerPrefab: {fileID: 0}
-  PlayerParent: {fileID: 0}
-  Players: []
+  bubbleSelectorPrefab: {fileID: 1524808897003564403, guid: 9f56b58f9083f3f4399c76f4f364f423, type: 3}
+  PlayerPrefab: {fileID: 1866446828614486842, guid: e6ef884b73be6b048a86dae20b81e9f1, type: 3}
+  PlayerParent: {fileID: 2006576112}
 --- !u!1 &1331815875
 GameObject:
   m_ObjectHideFlags: 0
@@ -5098,7 +5099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1938352456
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5162,10 +5163,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1325214419}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 6
+        m_MethodName: StopGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
