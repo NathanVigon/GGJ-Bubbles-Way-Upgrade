@@ -52,6 +52,6 @@ public class Menu : MonoBehaviour {
     }
 
     public void QuitLevel() {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MenuLvL");
     }
 }

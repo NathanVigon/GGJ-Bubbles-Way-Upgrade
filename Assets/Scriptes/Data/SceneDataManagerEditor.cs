@@ -1,4 +1,4 @@
-using Unity.VisualScripting.FullSerializer;
+/*using Unity.VisualScripting.FullSerializer;
 using UnityEditor;
 using UnityEngine;
 
@@ -39,3 +39,4 @@ public class SceneDataManagerEditor : Editor {
         }
     }
 }
+*/

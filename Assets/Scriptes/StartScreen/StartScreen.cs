@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartScreen : MonoBehaviour
-{
+public class StartScreen : MonoBehaviour { 
     public int lvlStart;
 
     private void Awake() {

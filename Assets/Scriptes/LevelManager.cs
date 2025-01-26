@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
@@ -158,7 +159,7 @@ public class LevelManager : MonoBehaviour {
         ResetStars();
         CanvasWin.SetActive(false);
         //TODO en attente d'un menu
-        throw new NotImplementedException();
+        SceneManager.LoadScene("MenuLvL");
     }
     
     private int TrueCountPlayers()

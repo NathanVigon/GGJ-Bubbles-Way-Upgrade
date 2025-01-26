@@ -57,9 +57,9 @@ public class SceneDataManager : MonoBehaviour {
 
         LevelData levelData = ScriptableObject.CreateInstance<LevelData>();
 
-        levelData.StartPoint = GetEntityFromData(StartPointParent, 0);
-        levelData.EndPoints = GetTabEntityFromData(EndPointParent);
-        levelData.Obstacles = GetTabEntityFromData(ObstacleParent);
+        //levelData.StartPoint = GetEntityFromData(StartPointParent, 0);
+        //levelData.EndPoints = GetTabEntityFromData(EndPointParent);
+        //levelData.Obstacles = GetTabEntityFromData(ObstacleParent);
 
         levelData.Money = MoneyToSave;
         levelData.TailleX = TailleXToSave;
@@ -69,25 +69,25 @@ public class SceneDataManager : MonoBehaviour {
 
         GameData.levelDatas.Add(levelData);
 
-        AssetDatabase.CreateAsset(levelData, "Assets/ScriptableObjects/LevelData/" + levelName + ".asset");
+        //AssetDatabase.CreateAsset(levelData, "Assets/ScriptableObjects/LevelData/" + levelName + ".asset");
     }
 
-    private EntityData[] GetTabEntityFromData(Transform parent) {
-        var entitys = new EntityData[parent.transform.childCount];
-        for (int i = 0; i < parent.transform.childCount; i++)
-            entitys[i] = GetEntityFromData(parent, i);
-        return entitys;
-    }
+    //private EntityData[] GetTabEntityFromData(Transform parent) {
+    //    var entitys = new EntityData[parent.transform.childCount];
+    //    for (int i = 0; i < parent.transform.childCount; i++)
+    //        entitys[i] = GetEntityFromData(parent, i);
+    //    return entitys;
+    //}
 
-    private EntityData GetEntityFromData(Transform parent, int index) {
-        var prefabSource = PrefabUtility.GetCorrespondingObjectFromSource(parent.transform.GetChild(index).gameObject) ;
-        return new EntityData() {
-            prefab = prefabSource,
-            position = parent.transform.GetChild(index).position,
-            rotation = parent.transform.GetChild(index).rotation,
-            scale = parent.transform.GetChild(index).localScale
-        };
-    }
+    //private EntityData GetEntityFromData(Transform parent, int index) {
+    //    //var prefabSource = PrefabUtility.GetCorrespondingObjectFromSource(parent.transform.GetChild(index).gameObject) ;
+    //    return new EntityData() {
+    //        prefab = ,
+    //        position = parent.transform.GetChild(index).position,
+    //        rotation = parent.transform.GetChild(index).rotation,
+    //        scale = parent.transform.GetChild(index).localScale
+    //    };
+    //}
 
     #endregion
 
