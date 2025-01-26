@@ -49,7 +49,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Start() {
-        indexLevel = 0;
+        indexLevel = GameObject.Find("GameLvl").GetComponent<StartScreen>().lvlStart;
         SceneDataManager.Instance.Load(indexLevel);
         LoadLevelData();
     }

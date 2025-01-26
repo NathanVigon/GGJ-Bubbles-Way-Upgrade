@@ -516,6 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &63777819
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -829,6 +830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &156387588
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -912,6 +914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!54 &159687790
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1076,6 +1079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &177675810
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1213,6 +1217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &244877078
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1576,6 +1581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &307671858
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1792,6 +1798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &370229844
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1864,6 +1871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &379177535
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1963,6 +1971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &432944346
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2986,6 +2995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &573941774
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3526,6 +3536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &619541993
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3582,6 +3593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!54 &641211595
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3746,6 +3758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &655958918
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3818,6 +3831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &658359236
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4769,6 +4783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &761543406
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4841,6 +4856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &763752615
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5475,6 +5491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &843627820
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5520,6 +5537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &844288611
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5603,6 +5621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!54 &867474205
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5767,6 +5786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &876480819
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5986,6 +6006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &885685181
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6031,6 +6052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &886217263
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6130,6 +6152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &889810701
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6322,6 +6345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &917979768
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6405,6 +6429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!54 &933955514
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6860,6 +6885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &973537349
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6916,6 +6942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!54 &982451342
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7308,6 +7335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1055123780
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7821,6 +7849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1123382563
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8040,6 +8069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1150139399
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8112,6 +8142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1154646391
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8304,6 +8335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1169531118
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8403,6 +8435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1207170489
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8448,6 +8481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1224310206
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8547,6 +8581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1267012162
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8619,6 +8654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1283622552
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8788,6 +8824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!1 &1331288721 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2816492458616727572, guid: fe7e8d9eefc8bc8419541428cc19c5e6, type: 3}
@@ -8839,6 +8876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1331288725
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8884,6 +8922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1342949027
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8983,6 +9022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1363386469
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9380,7 +9420,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1418480780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1764306764}
+        m_TargetAssemblyTypeName: StartScreen, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1418480780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9501,7 +9553,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1420089573}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1764306764}
+        m_TargetAssemblyTypeName: StartScreen, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1420089573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9872,6 +9936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1481257582
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9944,6 +10009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1495320302
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10280,6 +10346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1542473885
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10363,6 +10430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!54 &1561207742
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10705,7 +10773,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1578133864}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1764306764}
+        m_TargetAssemblyTypeName: StartScreen, Assembly-CSharp
+        m_MethodName: Settings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1578133864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10795,6 +10875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1626438471
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11148,6 +11229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1663175373
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11220,6 +11302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1673153940
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11533,6 +11616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!1 &1696887823
 GameObject:
   m_ObjectHideFlags: 0
@@ -11660,6 +11744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!54 &1707602254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11824,6 +11909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1707798914
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11993,6 +12079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!1 &1759395831 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1143932660826922340, guid: efe4a213031b57145bfbc338a93bf6a8, type: 3}
@@ -12044,6 +12131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1759395835
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12074,6 +12162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1764306763}
+  - component: {fileID: 1764306764}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12096,6 +12185,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764306764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764306762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83d41e0a2c4abc44a7e8a4c5a4428fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1786951488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7592986312848526023, guid: 4f19bc91fbe78204e8596388fd3c0da5, type: 3}
@@ -12147,6 +12248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1786951492
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12339,6 +12441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1801053805
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12535,6 +12638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!1 &1838897546
 GameObject:
   m_ObjectHideFlags: 0
@@ -12863,6 +12967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.1
   minSpeed: 1
+  inflateRate: 0.1
 --- !u!54 &1920323603
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13000,6 +13105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &1987804278
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13099,6 +13205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityScale: 0.01
   minSpeed: 1.5
+  inflateRate: 0.1
 --- !u!135 &2013923475
 SphereCollider:
   m_ObjectHideFlags: 0
