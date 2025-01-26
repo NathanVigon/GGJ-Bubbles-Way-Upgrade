@@ -158,13 +158,11 @@ public class LevelManager : MonoBehaviour {
     }
     private IEnumerator LevelFinished()
     {
-        while (TrueCountPlayers() > 0) 
-        {
-            print(TrueCountPlayers());
-            yield return new WaitForSeconds(TrueCountPlayers()-0.9f); //Les player spawn a 1 seconde d'interval
+        while (TrueCountPlayers() > 0)
+        { 
+            yield return new WaitForSeconds(0.5f);
         }
-        print(TrueCountPlayers());
-        if (score > ActualLevelData.NbrPointEtoile[0])
+        if (score >= ActualLevelData.NbrPointEtoile[0])
         {
             LevelWin();
         }
@@ -181,7 +179,11 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void AddToScore(float difficultyLevelEndPoint) {
-        score += Math.Round( 10 * difficultyLevelEndPoint * (1+(money/ActualLevelData.Money)));
+        float moneyLeft = money;
+        float moneyTot = ActualLevelData.Money;
+        float propMoney =  (float)(moneyLeft / moneyTot);
+        score += Math.Round( 100 * difficultyLevelEndPoint * (1.0f+propMoney));
+        print(score);
     }
 
     #endregion

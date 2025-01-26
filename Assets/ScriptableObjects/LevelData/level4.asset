@@ -29,5 +29,5 @@ MonoBehaviour:
   Money: 30
   TailleX: 20
   TailleY: 10
-  NbrBonhomme: 1
-  NbrPointEtoile: 01000000
+  NbrBonhomme: 2
+  NbrPointEtoile: c8000000

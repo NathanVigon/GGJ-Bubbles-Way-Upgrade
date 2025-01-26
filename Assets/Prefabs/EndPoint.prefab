@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8629bccd1516e8449a4756e246770d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DifficultyLevel: 0
+  DifficultyLevel: 1
 --- !u!1 &7563837664076409137
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 653445614069106325, guid: a8334101957492f40b07a7413a425b27, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 653445614069106325, guid: a8334101957492f40b07a7413a425b27, type: 3}
       propertyPath: m_LocalPosition.y
