@@ -86,9 +86,9 @@ public class Cursor : MonoBehaviour {
             // Vérifier s'il y a un objet sous le curseur
             Collider[] colliders = Physics.OverlapSphere(position, 0.1f);
 
-            foreach (Collider collider in colliders) {
+            foreach (Collider col in colliders) {
                 // Vérifier si l'objet possède le script Bubble
-                Bubble bubble = collider.transform.parent.GetComponent<Bubble>();
+                Bubble bubble = col.transform.GetComponent<Bubble>();
                 if (bubble) {
                     // Supprimer l'objet
                     LevelManager.Instance.ChangeMoney(bubble.prix);

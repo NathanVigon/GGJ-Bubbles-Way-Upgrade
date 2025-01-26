@@ -12,7 +12,7 @@ public class SpawnForTest : MonoBehaviour {
     }
 
     public IEnumerator SpawnCharacter() {
-        Instantiate(characterPrefab, transform.position, transform.rotation);
+        Instantiate(characterPrefab, transform);
         yield return new WaitForSeconds(2f);
         StartCoroutine(SpawnCharacter());
     }
