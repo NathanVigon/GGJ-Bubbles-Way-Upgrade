@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour {
             rb.velocity = new Vector3(velocite, rb.velocity.y, rb.velocity.z);
             rb.AddForce(new Vector3(0, gravityScale, 0) * 2, ForceMode.Acceleration);
         }
+        if (transform.position.y < -50 || transform.position.y > 50)
+            Destroy(this.gameObject);
     }
 
     public void Elevator(bool value) {
