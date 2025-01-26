@@ -9,6 +9,7 @@ public class Cursor : MonoBehaviour {
     public GameObject previewPrefab;
     public SpriteRenderer spriteRenderer;
     public bool canPlaceHere;
+    [SerializeField] private Transform ParentBubble;
 
     public Sprite pin;
     public Sprite square;
@@ -86,7 +87,7 @@ public class Cursor : MonoBehaviour {
         if (previewPrefab) {
             // Instancier le prefab à la position de la grille
             GameObject placedPrefab = Instantiate(previewPrefab, position, Quaternion.identity);
-            placedPrefab.transform.parent = GridManager.Instance.transform.Find("Bubbles");
+            placedPrefab.transform.parent = ParentBubble;
             LevelManager.Instance.ChangeMoney(-placedPrefab.GetComponent<Bubble>().prix);
         } else {
             // Vérifier s'il y a un objet sous le curseur
