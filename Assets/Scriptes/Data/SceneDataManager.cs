@@ -8,12 +8,15 @@ public class SceneDataManager : MonoBehaviour {
     [Header("Game")]
     public static SceneDataManager Instance;
     [SerializeField] private GameData GameData;
-    public LevelData ActualLevelData { get; private set; }
+    public LevelData ActualLevelData { get; set; }
 
     [Header("Parent")]
     [SerializeField] private Transform StartPointParent;
     [SerializeField] private Transform EndPointParent;
     [SerializeField] private Transform ObstacleParent;
+    [SerializeField] private Transform BubbleParent;
+    [SerializeField] private Transform BubbleDispoParent;
+
 
     [Header("LevelData")]
     [SerializeField] private GameObject[] BulleDispoToSave;
@@ -28,7 +31,6 @@ public class SceneDataManager : MonoBehaviour {
             Destroy(this);
         else
             Instance = this;
-        Load(0);
     }
 
     public void NextLevel() {
@@ -99,6 +101,8 @@ public class SceneDataManager : MonoBehaviour {
         DestroyChilds(StartPointParent);
         DestroyChilds(EndPointParent);
         DestroyChilds(ObstacleParent);
+        DestroyChilds(BubbleParent);
+        DestroyChilds(BubbleDispoParent);
     }
     private void DestroyChilds(Transform parent) {
         for (int i = 0; i < parent.transform.childCount; i++) {

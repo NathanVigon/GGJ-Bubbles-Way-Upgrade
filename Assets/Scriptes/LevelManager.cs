@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour {
     public bool isPlaying = false;
     public bool isWin = false;
 
-    public float money;
+    public int money;
     public TextMeshProUGUI MoneyText;
     public TextMeshProUGUI ScoreText;
     [SerializeField] private GameObject CanvasWin;
@@ -20,12 +20,15 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] private GameObject StopButton;
     public GameObject menuBarDown;
     public GameObject bubbleSelectorPrefab;
-    
+
     [SerializeField] private GameObject PlayerPrefab;
     [SerializeField] private Transform PlayerParent;
     private List<GameObject> Players = new();
 
-    private LevelData ActualLevelData;
+    private LevelData ActualLevelData {
+        get {return SceneDataManager.Instance.ActualLevelData;}
+        set {SceneDataManager.Instance.ActualLevelData = value;}
+    }
 
     void Awake(){
         if (Instance != null && Instance != this){
@@ -33,7 +36,7 @@ public class LevelManager : MonoBehaviour {
         } else {
             Instance = this;
         }
-
+        SceneDataManager.Instance.Load(0);
         LoadLevelData();
     }
 
@@ -56,13 +59,14 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    public void ChangeMoney(float value){
+    public void ChangeMoney(int value){
         money += value;
         MoneyText.text = money + "L";
     }
     public void LoadLevelData() {
         money = ActualLevelData.Money;
         CollectPrefab(ActualLevelData.BulleDispo);
+        ChangeMoney(0);
     }
 
     #region WIN CANVAS
@@ -88,7 +92,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     private int CalculScore(int difficultyLevelEndPoint) {
-        throw new NotImplementedException();
+        return 0;
     }
 
     #endregion
