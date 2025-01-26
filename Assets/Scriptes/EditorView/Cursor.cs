@@ -10,6 +10,9 @@ public class Cursor : MonoBehaviour {
     public SpriteRenderer spriteRenderer;
     public bool canPlaceHere;
 
+    public Sprite pin;
+    public Sprite square;
+
     void Awake() {
         if (Instance != null && Instance != this) {
             Destroy(gameObject);
@@ -73,6 +76,9 @@ public class Cursor : MonoBehaviour {
         if (prefab) {
             previewPrefab = Instantiate(prefab, transform, this);
             previewPrefab.transform.position = transform.position;
+            GetComponent<SpriteRenderer>().sprite = square;
+        } else {
+            GetComponent<SpriteRenderer>().sprite = pin;
         }
     }
 
@@ -116,7 +122,7 @@ public class Cursor : MonoBehaviour {
 
             spriteRenderer.color = canPlaceHere ? new Color(0, 0, 0, 0.1f) : new Color(1, 0, 0, 0.5f);
         } else {
-            spriteRenderer.color = new Color(0, 0, 0, 0.1f);
+            spriteRenderer.color = new Color(1, 1, 1, 1f);
         }
     }
 

@@ -189,7 +189,7 @@ MonoBehaviour:
       - m_Target: {fileID: 927032213}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: StartGame
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1977,20 +1977,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db70eea26f84bce4893e87728089eea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButton: {fileID: 14726635}
-  stopButton: {fileID: 1025481543}
   isPlaying: 0
-  money: 100
-  text: {fileID: 75781041}
+  money: 999
+  MoneyText: {fileID: 75781041}
+  PlayButton: {fileID: 14726635}
+  StopButton: {fileID: 1025481543}
   menuBarDown: {fileID: 15272097}
   bubbleSelectorPrefab: {fileID: 1524808897003564403, guid: 9f56b58f9083f3f4399c76f4f364f423, type: 3}
-  prefabsForTest:
-  - {fileID: 4174465412253184720, guid: c0235079d04dc1b448f5ecac06cbaa24, type: 3}
-  - {fileID: 7592986312848526023, guid: 4f19bc91fbe78204e8596388fd3c0da5, type: 3}
+  BulleDispo:
   - {fileID: 2032810456575358678, guid: 3de9d2dd2f5051b4498fc6c90884d143, type: 3}
-  - {fileID: 1143932660826922340, guid: e343a1966be31df41a4b1074f9245a43, type: 3}
-  - {fileID: 5554600846481432276, guid: 4d3d9c0cc09344b488b454a4d20ff815, type: 3}
+  - {fileID: 7592986312848526023, guid: 4f19bc91fbe78204e8596388fd3c0da5, type: 3}
   - {fileID: 2816492458616727572, guid: fe7e8d9eefc8bc8419541428cc19c5e6, type: 3}
+  - {fileID: 5554600846481432276, guid: 4d3d9c0cc09344b488b454a4d20ff815, type: 3}
+  - {fileID: 1143932660826922340, guid: e343a1966be31df41a4b1074f9245a43, type: 3}
+  - {fileID: 4174465412253184720, guid: c0235079d04dc1b448f5ecac06cbaa24, type: 3}
+  PlayerPrefab: {fileID: 279551553289850110, guid: 368119138aa790742b0d83dd82712f53, type: 3}
+  PlayerParent: {fileID: 1971095189}
+  Players: []
 --- !u!82 &927032214
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2369,7 +2372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1025481544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2435,8 +2438,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 927032213}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 6
+        m_MethodName: StopGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5031,6 +5034,8 @@ MonoBehaviour:
   previewPrefab: {fileID: 0}
   spriteRenderer: {fileID: 0}
   canPlaceHere: 0
+  pin: {fileID: 21300000, guid: f257e5b2b6d0ba54c9757515fff93d6b, type: 3}
+  square: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
 --- !u!212 &2066256953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5072,8 +5077,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.19607843}
+  m_Sprite: {fileID: 21300000, guid: f257e5b2b6d0ba54c9757515fff93d6b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
