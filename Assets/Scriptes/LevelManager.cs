@@ -22,6 +22,8 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] private GameObject StopButton;
     public GameObject menuBarDown;
     public GameObject bubbleSelectorPrefab;
+    [SerializeField] private GameObject[] StarsJaune;
+    [SerializeField] private GameObject[] StarsGris;
 
     [SerializeField] private GameObject PlayerPrefab;
     [SerializeField] private Transform PlayerParent;
@@ -135,6 +137,7 @@ public class LevelManager : MonoBehaviour {
     #region WIN CANVAS
 
     public void OnClickNextLevel() {
+        ResetStars();
         CanvasWin.SetActive(false);
         SwitchStateGame();
         SceneDataManager.Instance.NextLevel();
@@ -144,6 +147,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void OnClickRetry() {
+        ResetStars();
         CanvasWin.SetActive(false);
         SwitchStateGame();
         isWin = false;
@@ -151,6 +155,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void OnClickGoMenu() {
+        ResetStars();
         CanvasWin.SetActive(false);
         //TODO en attente d'un menu
         throw new NotImplementedException();
@@ -172,7 +177,7 @@ public class LevelManager : MonoBehaviour {
     {
         while (TrueCountPlayers() > 0)
         { 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(TrueCountPlayers()-0.9f);
         }
         if (score >= ActualLevelData.NbrPointEtoile[0])
         {
@@ -188,8 +193,13 @@ public class LevelManager : MonoBehaviour {
         isWin = true;
         CanvasWin.SetActive(true);
         ScoreText.text = "Score : " + score;
-        //TODO : ajouter la validation du nombre d'étoiles
-
+        for(int i = 0; i < ActualLevelData.NbrPointEtoile.Length; i++) {
+            if (score >= ActualLevelData.NbrPointEtoile[i]) {
+                StarsJaune[i].SetActive(true);
+            } else {
+                StarsGris[i].SetActive(true);
+            }
+        }
     }
 
     public void AddToScore(float difficultyLevelEndPoint) {
@@ -198,6 +208,17 @@ public class LevelManager : MonoBehaviour {
         float propMoney =  (float)(moneyLeft / moneyTot);
         score += Math.Round( 100 * difficultyLevelEndPoint * (1.0f+propMoney));
         print(score);
+    }
+
+    private void ResetStar(GameObject[] stars) {
+        for (int i = 0; i < stars.Length; i++) {
+            stars[i].SetActive(false);
+        }
+    }
+
+    private void ResetStars() {
+        ResetStar(StarsJaune);
+        ResetStar(StarsGris);
     }
 
     #endregion
