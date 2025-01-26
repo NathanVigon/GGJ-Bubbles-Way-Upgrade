@@ -6,8 +6,10 @@ public class BullesMainMenu : MonoBehaviour
 {
     public float gravityScale = 0.1f; // Gravité faible
     public float minSpeed = 1.0f; // Vitesse minimale pour éviter l'arrêt complet
+    public float inflateRate = 0.1f; // Taux de gonflement par seconde
 
     private Rigidbody rb;
+    private bool isInflating = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,12 @@ public class BullesMainMenu : MonoBehaviour
         {
             rb.velocity = rb.velocity.normalized * minSpeed;
         }
+
+        // Gonfler la bulle si le bouton droit de la souris est maintenu enfoncé
+        if (isInflating)
+        {
+            transform.localScale += Vector3.one * inflateRate * Time.deltaTime;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -44,5 +52,27 @@ public class BullesMainMenu : MonoBehaviour
 
         // Ajouter une petite force aléatoire pour éviter l'arrêt complet
         rb.AddForce(new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0) * 0.1f, ForceMode.Impulse);
+    }
+
+    void OnMouseDown()
+    {
+        // Détruire la bulle lorsqu'on clique avec le bouton gauche de la souris
+        if (Input.GetMouseButton(0))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnMouseOver()
+    {
+        // Commencer à gonfler la bulle lorsqu'on maintient le bouton droit de la souris enfoncé
+        if (Input.GetMouseButton(1))
+        {
+            isInflating = true;
+        }
+        else
+        {
+            isInflating = false;
+        }
     }
 }
