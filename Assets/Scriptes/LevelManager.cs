@@ -195,7 +195,7 @@ public class LevelManager : MonoBehaviour {
     #region PLAY/STOP GAME
 
     public void StartGame(){
-        if (isWin && canPlay) return;
+        if (isWin || !canPlay) return;
         
         SwitchStateGame();
         score = 0;
