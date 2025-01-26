@@ -35,7 +35,7 @@ public class BullesMainMenu : MonoBehaviour
             rb.velocity = rb.velocity.normalized * minSpeed;
         }
 
-        // Gonfler la bulle si le bouton de la souris est maintenu enfoncé
+        // Gonfler la bulle si le bouton droit de la souris est maintenu enfoncé
         if (isInflating)
         {
             transform.localScale += Vector3.one * inflateRate * Time.deltaTime;
@@ -56,22 +56,23 @@ public class BullesMainMenu : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Détruire la bulle lorsqu'on clique dessus
-        Destroy(gameObject);
+        // Détruire la bulle lorsqu'on clique avec le bouton gauche de la souris
+        if (Input.GetMouseButton(0))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnMouseOver()
     {
-        // Commencer à gonfler la bulle si le bouton de la souris est maintenu enfoncé
-        if (Input.GetMouseButton(0))
+        // Commencer à gonfler la bulle lorsqu'on maintient le bouton droit de la souris enfoncé
+        if (Input.GetMouseButton(1))
         {
             isInflating = true;
         }
-    }
-
-    void OnMouseUp()
-    {
-        // Arrêter de gonfler la bulle lorsque le bouton de la souris est relâché
-        isInflating = false;
+        else
+        {
+            isInflating = false;
+        }
     }
 }
