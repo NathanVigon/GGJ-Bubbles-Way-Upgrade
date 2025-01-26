@@ -504,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &80140754
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3967,6 +3967,8 @@ MonoBehaviour:
   previewPrefab: {fileID: 0}
   spriteRenderer: {fileID: 0}
   canPlaceHere: 0
+  pin: {fileID: 0}
+  square: {fileID: 0}
 --- !u!212 &1373021769
 SpriteRenderer:
   m_ObjectHideFlags: 0
