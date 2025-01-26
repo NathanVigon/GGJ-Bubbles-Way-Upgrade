@@ -17,7 +17,7 @@ public class LevelData : ScriptableObject {
     public int[] NbrPointEtoile;
 
 
-    public void LoadLevel(Transform StartPointParent, Transform EndPointParent, Transform ObstacleParent) {
+    public void LoadLevelMap(Transform StartPointParent, Transform EndPointParent, Transform ObstacleParent) {
         StartPoint.InstantiateEntity(StartPointParent);
         LoadTabEntity(EndPointParent, EndPoints);
         LoadTabEntity(ObstacleParent, Obstacles);

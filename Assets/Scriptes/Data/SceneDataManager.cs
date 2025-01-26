@@ -28,6 +28,11 @@ public class SceneDataManager : MonoBehaviour {
             Destroy(this);
         else
             Instance = this;
+        Load(0);
+    }
+
+    public void NextLevel() {
+        Load(GameData.levelDatas.IndexOf(ActualLevelData) + 1);
     }
 
     #region LOAD
@@ -36,7 +41,7 @@ public class SceneDataManager : MonoBehaviour {
         Clean();
         if (levelIndex < GameData.levelDatas.Count) {
             ActualLevelData = GameData.levelDatas[levelIndex];
-            ActualLevelData.LoadLevel(StartPointParent, EndPointParent, ObstacleParent);
+            ActualLevelData.LoadLevelMap(StartPointParent, EndPointParent, ObstacleParent);
             //TODO load grille + reste de l'ui (money, bulle dispo, etc)
         } else
             Debug.Log(levelIndex + " est hors limite");
