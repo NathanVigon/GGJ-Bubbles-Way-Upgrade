@@ -4,28 +4,28 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Object = UnityEngine.Object;
 
 public class LevelManager : MonoBehaviour {
     public static LevelManager Instance { get; private set; }
 
     public bool isPlaying = false;
+    public bool isWin = false;
 
     public float money;
     public TextMeshProUGUI MoneyText;
+    public TextMeshProUGUI ScoreText;
+    [SerializeField] private GameObject CanvasWin;
 
     [SerializeField] private GameObject PlayButton;
     [SerializeField] private GameObject StopButton;
     public GameObject menuBarDown;
     public GameObject bubbleSelectorPrefab;
-    public GameObject[] BulleDispo;
-
+    
     [SerializeField] private GameObject PlayerPrefab;
     [SerializeField] private Transform PlayerParent;
-    [SerializeField] private List<GameObject> Players;
+    private List<GameObject> Players = new();
 
     private LevelData ActualLevelData;
-    private int NbrBonhommeFin;
 
     void Awake(){
         if (Instance != null && Instance != this){
@@ -33,9 +33,8 @@ public class LevelManager : MonoBehaviour {
         } else {
             Instance = this;
         }
-        
-        ChangeMoney(0);
-        CollectPrefab(BulleDispo);
+
+        LoadLevelData();
     }
 
     public void SwitchStateGame() {
@@ -67,15 +66,33 @@ public class LevelManager : MonoBehaviour {
         CollectPrefab(ActualLevelData.BulleDispo);
     }
 
+    #region WIN CANVAS
+
     public void OnClickNextLevel() {
+        CanvasWin.SetActive(false);
+        SwitchStateGame();
         SceneDataManager.Instance.NextLevel();
         ActualLevelData = SceneDataManager.Instance.ActualLevelData;
+        LoadLevelData();
     }
 
     public void OnClickGoMenu() {
+        CanvasWin.SetActive(false);
         //TODO en attente d'un menu
         throw new NotImplementedException();
     }
+
+    public void LevelWin(int difficultyLevelEndPoint) {
+        CanvasWin.SetActive(true);
+        int score = CalculScore(difficultyLevelEndPoint);
+        ScoreText.text = "Score : " + score;
+    }
+
+    private int CalculScore(int difficultyLevelEndPoint) {
+        throw new NotImplementedException();
+    }
+
+    #endregion
 
     #region PLAY/STOP GAME
 
@@ -88,16 +105,20 @@ public class LevelManager : MonoBehaviour {
     public void StopGame() {
         SwitchStateGame();
         GridManager.Instance.ChangeVisibility(GridManager.Instance.visibility);
-        for (int i = 0; i < Players.Count; i++) {
-            Destroy(Players[i]);
-        }
+        KillAllPlayer();
     }
 
     private IEnumerator SpawnPlayer(float interval, int repeatCount) {
         for (int i = 0; i < repeatCount; i++) {
             //Instantion d'un player 
-            Object.Instantiate(PlayerPrefab, ActualLevelData.StartPoint.position + new Vector3(0,1,0), PlayerPrefab.transform.rotation, PlayerParent);
+            Players.Add(Instantiate(PlayerPrefab, ActualLevelData.StartPoint.position + new Vector3(0,1,0), PlayerPrefab.transform.rotation, PlayerParent));
             yield return new WaitForSeconds(interval);
+        }
+    }
+
+    private void KillAllPlayer() {
+        for (int i = 0; i < Players.Count; i++) {
+            Destroy(Players[i]);
         }
     }
 
