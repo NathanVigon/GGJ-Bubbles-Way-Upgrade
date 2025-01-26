@@ -6,7 +6,6 @@ public class Jump : MonoBehaviour {
     [SerializeField] private float jumpPower;
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log(other);
         other.GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
     }
 }

@@ -22,13 +22,17 @@ public class Elevator : MonoBehaviour {
         
         float elapsedTime = 0;
         while (elapsedTime < duration) {
+            if(movement == null) {
+                break;
+            }
             movement.transform.position = Vector3.Lerp(transform.position, target, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        Destroy(obj);
-        movement.Elevator(true);
-        movement.GetComponent<Rigidbody>().AddForce(new Vector3(0, leavingJumpPower, 0), ForceMode.Impulse);
-        
+        if(movement != null) {
+            Destroy(obj);
+            movement.Elevator(true);
+            movement.GetComponent<Rigidbody>().AddForce(new Vector3(0, leavingJumpPower, 0), ForceMode.Impulse);
+        }
     }
 }

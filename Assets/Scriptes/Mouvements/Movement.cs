@@ -9,7 +9,6 @@ public class Movement : MonoBehaviour {
     void Start() {
         rb = GetComponent<Rigidbody>();
         canBouge = true;
-        StartCoroutine(Dead());
     }
 
     void FixedUpdate() {
@@ -24,10 +23,5 @@ public class Movement : MonoBehaviour {
         if (!canBouge) {
             rb.velocity = new Vector3(0, 0, 0);
         }
-    }
-
-    IEnumerator Dead() {
-        yield return new WaitForSeconds(15);
-        Destroy(gameObject);
     }
 }

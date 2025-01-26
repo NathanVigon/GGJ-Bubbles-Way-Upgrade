@@ -22,7 +22,7 @@ public class SceneDataManagerEditor : Editor {
             if (int.TryParse(levelIndex, out int result))
                 sceneDataManager.Load(result);
             else
-                Debug.Log(levelIndex + " isnt an int");
+                Debug.LogError(levelIndex + " isnt an int");
         }
 
         GUILayout.Space(10);

@@ -36,6 +36,9 @@ public class LevelManager : MonoBehaviour {
         } else {
             Instance = this;
         }
+    }
+
+    private void Start() {
         SceneDataManager.Instance.Load(0);
         LoadLevelData();
     }
@@ -67,6 +70,7 @@ public class LevelManager : MonoBehaviour {
         money = ActualLevelData.Money;
         CollectPrefab(ActualLevelData.BulleDispo);
         ChangeMoney(0);
+        Cursor.Instance.SetPrefab(null);
     }
 
     #region WIN CANVAS
@@ -108,13 +112,14 @@ public class LevelManager : MonoBehaviour {
     public void StopGame() {
         SwitchStateGame();
         GridManager.Instance.ChangeVisibility(GridManager.Instance.visibility);
+        StopAllCoroutines();
         KillAllPlayer();
     }
 
     private IEnumerator SpawnPlayer(float interval, int repeatCount) {
         for (int i = 0; i < repeatCount; i++) {
             //Instantion d'un player 
-            Players.Add(Instantiate(PlayerPrefab, ActualLevelData.StartPoint.position + new Vector3(0,1,0), PlayerPrefab.transform.rotation, PlayerParent));
+            Players.Add(Instantiate(PlayerPrefab, ActualLevelData.StartPoint.position + new Vector3(-0.5f,1,0), PlayerPrefab.transform.rotation, PlayerParent));
             yield return new WaitForSeconds(interval);
         }
     }

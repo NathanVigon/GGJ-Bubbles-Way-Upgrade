@@ -28,7 +28,7 @@ public class SceneDataManager : MonoBehaviour {
 
     private void Awake() {
         if (Instance != null && Instance != this)
-            Destroy(this);
+            Destroy(gameObject);
         else
             Instance = this;
     }
@@ -44,9 +44,8 @@ public class SceneDataManager : MonoBehaviour {
         if (levelIndex < GameData.levelDatas.Count) {
             ActualLevelData = GameData.levelDatas[levelIndex];
             ActualLevelData.LoadLevelMap(StartPointParent, EndPointParent, ObstacleParent);
-            //TODO load grille + reste de l'ui (money, bulle dispo, etc)
         } else
-            Debug.Log(levelIndex + " est hors limite");
+            Debug.LogError(levelIndex + " est hors limite");
     }
 
     #endregion
@@ -55,7 +54,7 @@ public class SceneDataManager : MonoBehaviour {
 
     public void Save(string levelName) {
         if (TailleXToSave % 2 != 0 || TailleYToSave % 2 != 0) {
-            Debug.Log("Taille de la grille impaire");
+            Debug.LogError("Taille de la grille impaire");
             return;
         }
 
