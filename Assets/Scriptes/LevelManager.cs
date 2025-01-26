@@ -97,7 +97,7 @@ public class LevelManager : MonoBehaviour {
             case 1:
                 tutorialQueue.Enqueue("GreenBubbles");
                 tutorialQueue.Enqueue("RedBubbles");
-                tutorialQueue.Enqueue("Spike");
+                tutorialQueue.Enqueue("Spikes");
                 break;
             case 2:
                 tutorialQueue.Enqueue("PurpleBubbles");
