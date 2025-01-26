@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour {
 
     public bool isPlaying;
     public bool isWin;
+    public bool canPlay;
 
     public int money;
     public TextMeshProUGUI MoneyText;
@@ -75,6 +76,8 @@ public class LevelManager : MonoBehaviour {
         CollectPrefab(ActualLevelData.BulleDispo);
         ChangeMoney(0);
         Cursor.Instance.SetPrefab(null);
+        canPlay = false;
+        isWin = false;
         ShowTutorial();
     }
     
@@ -113,6 +116,8 @@ public class LevelManager : MonoBehaviour {
                 tutorialTransform.gameObject.SetActive(true);
                 tutorialTransform.GetComponent<Button>().onClick.AddListener(OnTutorialClicked);
             }
+        } else {
+            canPlay = true;
         }
     }
 
@@ -141,6 +146,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void LevelWin(int difficultyLevelEndPoint) {
+        isWin = true;
         CanvasWin.SetActive(true);
         int score = CalculScore(difficultyLevelEndPoint);
         ScoreText.text = "Score : " + score;
@@ -155,7 +161,7 @@ public class LevelManager : MonoBehaviour {
     #region PLAY/STOP GAME
 
     public void StartGame(){
-        if (isWin) return;
+        if (isWin && canPlay) return;
         
         SwitchStateGame();
         GridManager.Instance.ChangeVisibility(GridManager.Instance.visibility);
