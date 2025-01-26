@@ -143,6 +143,13 @@ public class LevelManager : MonoBehaviour {
         LoadLevelData();
     }
 
+    public void OnClickRetry() {
+        CanvasWin.SetActive(false);
+        SwitchStateGame();
+        isWin = false;
+        canPlay = true;
+    }
+
     public void OnClickGoMenu() {
         CanvasWin.SetActive(false);
         //TODO en attente d'un menu
