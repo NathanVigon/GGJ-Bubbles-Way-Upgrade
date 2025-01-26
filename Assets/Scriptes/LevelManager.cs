@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,10 +26,13 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] private GameObject PlayerPrefab;
     [SerializeField] private Transform PlayerParent;
     private List<GameObject> Players = new();
-
+    
     private int indexLevel;
     public GameObject canvasTutorials;
     private Queue<string> tutorialQueue = new Queue<string>();
+    
+    private double score;
+    
     private LevelData ActualLevelData {
         get {return SceneDataManager.Instance.ActualLevelData;}
         set {SceneDataManager.Instance.ActualLevelData = value;}
@@ -144,16 +148,46 @@ public class LevelManager : MonoBehaviour {
         //TODO en attente d'un menu
         throw new NotImplementedException();
     }
-
-    public void LevelWin(int difficultyLevelEndPoint) {
-        isWin = true;
-        CanvasWin.SetActive(true);
-        int score = CalculScore(difficultyLevelEndPoint);
-        ScoreText.text = "Score : " + score;
+    
+    private int TrueCountPlayers()
+    {
+        int count = 0;
+        for (int i = 0; i < Players.Count; i++)
+        {
+            if (Players[i] != null)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+    private IEnumerator LevelFinished()
+    {
+        while (TrueCountPlayers() > 0) 
+        {
+            print(TrueCountPlayers());
+            yield return new WaitForSeconds(TrueCountPlayers()-0.9f); //Les player spawn a 1 seconde d'interval
+        }
+        print(TrueCountPlayers());
+        if (score > ActualLevelData.NbrPointEtoile[0])
+        {
+            LevelWin();
+        }
+        else
+        {
+            SwitchStateGame();
+        }
     }
 
-    private int CalculScore(int difficultyLevelEndPoint) {
-        return 0;
+    private void LevelWin() {
+        isWin = true;
+        CanvasWin.SetActive(true);
+        ScoreText.text = "Score : " + score;
+        //TODO : ajouter la validation du nombre d'étoiles
+    }
+
+    public void AddToScore(float difficultyLevelEndPoint) {
+        score += Math.Round( 10 * difficultyLevelEndPoint * (1+(money/ActualLevelData.Money)));
     }
 
     #endregion
@@ -164,8 +198,10 @@ public class LevelManager : MonoBehaviour {
         if (isWin && canPlay) return;
         
         SwitchStateGame();
+        score = 0;
         GridManager.Instance.ChangeVisibility(GridManager.Instance.visibility);
         StartCoroutine(SpawnPlayer(1.0f, ActualLevelData.NbrBonhomme));
+        StartCoroutine(LevelFinished());
     }
 
     public void StopGame() {

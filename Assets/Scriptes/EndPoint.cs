@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EndPoint : MonoBehaviour
 {
-    public int DifficultyLevel;
+    public float DifficultyLevel;
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            LevelManager.Instance.LevelWin(DifficultyLevel);
+            LevelManager.Instance.AddToScore(DifficultyLevel);
             Destroy(other.gameObject);
         }
     }
