@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2173289156015130295
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -400
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316356881028757014, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324829134152083134, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_Name
+      value: RedBubbles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324829134152083134, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099747921506205717, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099747921506205717, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086289908535383692, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_text
+      value: Red Bubbles
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086289908535383692, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377767616156999423, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_text
+      value: Works like blue bubbles but bounces less far and higher.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377767616156999423, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377767616156999423, guid: 437504f9314df514c8414ef3758bb014, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 437504f9314df514c8414ef3758bb014, type: 3}
