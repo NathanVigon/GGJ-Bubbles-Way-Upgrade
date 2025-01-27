@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
     public static LevelManager Instance { get; private set; }
+    [SerializeField] private GameData GameData;
 
     public bool isPlaying;
     public bool isWin;
@@ -50,7 +51,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Start() {
-        indexLevel = GameObject.Find("GameLvl").GetComponent<StartScreen>().lvlStart;
+        indexLevel = GameData.levelToLoad;
         SceneDataManager.Instance.Load(indexLevel);
         LoadLevelData();
     }

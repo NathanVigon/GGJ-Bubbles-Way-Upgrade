@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartScreen : MonoBehaviour { 
-    public int lvlStart;
+public class StartScreen : MonoBehaviour {
+
+    [SerializeField] private GameData GameData;
 
     private void Awake() {
         if(gameObject.name == "GameLvl") {
@@ -29,7 +30,7 @@ public class StartScreen : MonoBehaviour {
     }
 
     public void GoLvl(int value) {
-        lvlStart = value;
+        GameData.levelToLoad = value;
         SceneManager.LoadScene("SampleScene");
     }
 }
