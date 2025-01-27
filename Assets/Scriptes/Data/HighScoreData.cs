@@ -2,33 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "HighScoreData", menuName = "Data/HighScoreData", order = 3)]
 public class HighScoreData : ScriptableObject
 {
     public int indexLevel;
-    public int score;
-}
+    public double score;
 
-public class HighScoreListData : ScriptableObject
-{
-    public List<HighScoreData> data;
-
-    public void AddHighScore(HighScoreData highScore)
+    public HighScoreData(int indexLevel, double score)
     {
-        bool found=false;
-        for (int i = 0; i< data.Count; i++)
-        {
-            if (data[i].indexLevel == highScore.indexLevel)
-            {
-                found= true;
-                if (data[i].score < highScore.score)
-                {
-                    data[i].score = highScore.score;
-                }
-            }
-        }
-        if (!found)
-        {
-            data.Add(highScore);
-        }
+        this.indexLevel = indexLevel;
+        this.score = score;
     }
 }
+

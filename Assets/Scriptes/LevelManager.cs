@@ -36,7 +36,8 @@ public class LevelManager : MonoBehaviour {
     private Queue<string> tutorialQueue = new Queue<string>();
     
     private double score;
-    
+    private HighScoreListData HighScoreList;
+
     private LevelData ActualLevelData {
         get {return SceneDataManager.Instance.ActualLevelData;}
         set {SceneDataManager.Instance.ActualLevelData = value;}
@@ -53,6 +54,7 @@ public class LevelManager : MonoBehaviour {
     private void Start() {
         indexLevel = GameData.levelToLoad;
         SceneDataManager.Instance.Load(indexLevel);
+        HighScoreList = HighScoreManager.Instance.LoadHighScores();
         LoadLevelData();
     }
 
@@ -183,6 +185,9 @@ public class LevelManager : MonoBehaviour {
         }
         if (score >= ActualLevelData.NbrPointEtoile[0])
         {
+            HighScoreManager.Instance.HighScoreList.AddHighScore(new HighScoreData(indexLevel, score));
+            print(HighScoreManager.Instance.HighScoreList);
+            HighScoreManager.Instance.SaveHighScores();
             LevelWin();
         }
         else

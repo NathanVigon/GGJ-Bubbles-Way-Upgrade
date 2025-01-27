@@ -6,13 +6,9 @@ using UnityEngine.SceneManagement;
 public class StartScreen : MonoBehaviour {
 
     [SerializeField] private GameData GameData;
-    [SerializeField] private HighScoreManager HighScoreManager;
 
     private void Awake() {
-        if(gameObject.name == "GameLvl") {
-            DontDestroyOnLoad(gameObject);
-        }
-        HighScoreManager.HighScoreList = HighScoreManager.LoadHighScores();
+        HighScoreManager.Instance.HighScoreList = HighScoreManager.Instance.LoadHighScores();
     }
 
     public void ChangeScene() {

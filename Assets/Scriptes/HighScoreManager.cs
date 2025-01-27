@@ -6,21 +6,28 @@ using UnityEngine;
 public class HighScoreManager : MonoBehaviour
 {
 
+    public static HighScoreManager Instance;
     private string filePath;
     public HighScoreListData HighScoreList;
 
     private void Awake()
     {
         filePath = Path.Combine(Application.persistentDataPath, "highscores.json");
-        Debug.Log("Highscores File Path: " + filePath);
+        print("Highscores File Path: " + filePath);
+
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
+            Instance = this;
+
     }
 
     // Sauvegarder les highscores
-    public void SaveHighScores(HighScoreListData highScoreList)
+    public void SaveHighScores()
     {
-        string json = JsonUtility.ToJson(highScoreList, true); // Convertir en JSON formaté
+        string json = JsonUtility.ToJson(HighScoreList, true); // Convertir en JSON formaté
         File.WriteAllText(filePath, json);
-        Debug.Log("Highscores Saved.");
+        print("Highscores Saved.");
     }
 
     // Charger les highscores
@@ -33,7 +40,7 @@ public class HighScoreManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No Highscores Found. Returning Empty List.");
+            print("No Highscores Found. Returning Empty List.");
             return new HighScoreListData();
         }
     }

@@ -3981,6 +3981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351726383}
   - component: {fileID: 1351726382}
+  - component: {fileID: 1351726384}
   m_Layer: 0
   m_Name: GameLvl
   m_TagString: Untagged
@@ -4016,6 +4017,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1351726384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351726381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89a4a6f9d1bbf742b1f83e4c5a81a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HighScoreList: {fileID: 11400000, guid: 807145472c16f2b42b21d67de1e754f7, type: 2}
 --- !u!1 &1365413085
 GameObject:
   m_ObjectHideFlags: 0
